@@ -1,36 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Multi-File Game</title>
-    <style>
-        body { 
-            margin: 0; 
-            padding: 0; 
-            background: #1a1a2e; 
-            color: #fff; 
-            font-family: Arial, sans-serif;
-            overflow: hidden;
-        }
-        canvas { 
-            display: block; 
-            margin: 0 auto; 
-            border: 2px solid #fff;
-        }
-        #game-container {
-            width: 100vw;
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <title>Stellar Defender: Space Shooter</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id="game-container">
-        <div id="game"></div>
+  <div id="game-root">
+    <canvas id="game-canvas"></canvas>
+    <div id="ui-overlay" class="hidden">
+      <div id="start-screen" class="ui-screen">
+        <h1>Stellar Defender</h1>
+        <p>Defend the galaxy from waves of alien invaders!</p>
+        <button id="start-btn">Start Game</button>
+        <div class="controls">
+          <h2>Controls</h2>
+          <ul>
+            <li><b>Move:</b> ← → or Touch/Drag</li>
+            <li><b>Shoot:</b> Space or Tap</li>
+          </ul>
+        </div>
+      </div>
+      <div id="game-over-screen" class="ui-screen hidden">
+        <h1>Game Over</h1>
+        <p id="final-score"></p>
+        <button id="restart-btn">Restart</button>
+      </div>
+      <div id="pause-screen" class="ui-screen hidden">
+        <h2>Paused</h2>
+        <button id="resume-btn">Resume</button>
+      </div>
     </div>
-    <script src="game.js"></script>
+    <div id="hud">
+      <span id="score-label">Score: 0</span>
+      <span id="lives-label">Lives: 3</span>
+      <span id="level-label">Level: 1</span>
+      <button id="pause-btn" title="Pause">&#10073;&#10073;</button>
+    </div>
+  </div>
+  <script src="game.js"></script>
+  <script src="input.js"></script>
+  <script src="entities.js"></script>
+  <script src="ui.js"></script>
 </body>
 </html>
