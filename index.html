@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multi-File Game</title>
+    <style>
+        body { 
+            margin: 0; 
+            padding: 0; 
+            background: #1a1a2e; 
+            color: #fff; 
+            font-family: Arial, sans-serif;
+            overflow: hidden;
+        }
+        canvas { 
+            display: block; 
+            margin: 0 auto; 
+            border: 2px solid #fff;
+        }
+        #game-container {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="game-container">
+        <div id="game"></div>
+    </div>
+    <script src="game.js"></script>
+</body>
+</html>
